@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verde Vida - Hortifruti Natural</title>
+    <title>Horti+ - Hortifruti Premium</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -107,7 +107,7 @@
         
         /* Header e Navegação */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.98);
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
@@ -124,11 +124,11 @@
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .logo span {
@@ -181,7 +181,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
             background-size: cover;
             background-position: center;
             color: var(--text);
@@ -371,48 +371,60 @@
             color: white;
         }
         
-        /* Fundadores */
-        .founders {
+        /* Equipe */
+        .team {
             background-color: var(--light-green);
         }
         
-        .founders-content {
+        .team-content {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 40px;
         }
         
-        .founders-story {
+        .team-story {
             max-width: 800px;
             text-align: center;
             margin-bottom: 40px;
         }
         
-        .founders-image {
+        .team-image-placeholder {
             width: 100%;
-            max-width: 600px;
+            max-width: 800px;
+            height: 400px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
             margin-bottom: 30px;
+            background-color: var(--light);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed var(--border);
         }
         
-        .founders-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .team-image-placeholder i {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
         
-        .founders-profiles {
+        .team-image-placeholder p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .team-highlights {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             width: 100%;
-            max-width: 800px;
+            max-width: 1000px;
         }
         
-        .founder-profile {
+        .team-highlight {
             text-align: center;
             background-color: var(--light);
             border-radius: 8px;
@@ -422,18 +434,20 @@
             border: 1px solid var(--border);
         }
         
-        .founder-profile:hover {
+        .team-highlight:hover {
             transform: translateY(-10px);
         }
         
-        .founder-profile h3 {
+        .team-highlight h3 {
             font-size: 1.4rem;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
         
-        .founder-profile p {
+        .team-highlight-icon {
+            font-size: 2.5rem;
             color: var(--secondary);
-            font-weight: 500;
+            margin-bottom: 20px;
         }
         
         /* Contato */
@@ -549,12 +563,12 @@
         }
         
         .footer-logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 15px;
             display: inline-block;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .footer-logo span {
@@ -713,7 +727,7 @@
                 gap: 30px;
             }
             
-            .products-grid, .founders-profiles {
+            .products-grid, .team-highlights {
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
@@ -734,6 +748,10 @@
             .highlights-container {
                 grid-template-columns: 1fr 1fr;
             }
+            
+            .team-image-placeholder {
+                height: 300px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -749,7 +767,7 @@
                 font-size: 1.8rem;
             }
             
-            .product-item, .founder-profile {
+            .product-item, .team-highlight {
                 padding: 20px 15px;
             }
             
@@ -760,6 +778,10 @@
             .highlights-container {
                 grid-template-columns: 1fr;
             }
+            
+            .team-image-placeholder {
+                height: 250px;
+            }
         }
     </style>
 </head>
@@ -768,12 +790,12 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Verde<span>Vida</span></a>
+                <a href="#" class="logo">Horti<span>+</span></a>
                 <ul class="nav-links">
                     <li><a href="#home">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#produtos">Produtos</a></li>
-                    <li><a href="#fundadores">Nossa Equipe</a></li>
+                    <li><a href="#equipe">Nosso Time</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -788,7 +810,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Frescor Direto da Natureza</h1>
-                <p>No Verde Vida, oferecemos os melhores produtos hortifrutis, orgânicos e frescos, diretamente do produtor para sua mesa. Qualidade que você vê e sabor que você sente.</p>
+                <p>No Horti+, oferecemos os melhores produtos hortifrutis, orgânicos e frescos, diretamente do produtor para sua mesa. Qualidade que você vê e sabor que você sente.</p>
                 <div class="hero-buttons">
                     <a href="#produtos" class="btn">Nossos Produtos</a>
                     <a href="#contato" class="btn btn-secondary">Peça Delivery</a>
@@ -801,7 +823,7 @@
     <section class="highlights">
         <div class="container">
             <div class="section-title">
-                <h2>Por que Escolher o Verde Vida?</h2>
+                <h2>Por que Escolher o Horti+?</h2>
             </div>
             <div class="highlights-container">
                 <div class="highlight-item">
@@ -841,11 +863,11 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior do Mercadinho Verde Vida">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior do Mercadinho Horti+">
                 </div>
                 <div class="about-text">
                     <h2>Nossa História</h2>
-                    <p>O Verde Vida nasceu da paixão por alimentos frescos e saudáveis, com a missão de conectar produtores locais a consumidores que valorizam qualidade e sustentabilidade.</p>
+                    <p>O Horti+ nasceu da paixão por alimentos frescos e saudáveis, com a missão de conectar produtores locais a consumidores que valorizam qualidade e sustentabilidade.</p>
                     <p>Nossa filosofia é simples: oferecer o melhor da natureza com transparência, respeito ao meio ambiente e compromisso com a saúde de nossos clientes.</p>
                     <p>Localizado no coração do bairro, nosso mercadinho se tornou um ponto de referência para quem busca qualidade, variedade e atendimento personalizado.</p>
                     <a href="#contato" class="btn">Venha nos Conhecer</a>
@@ -896,34 +918,47 @@
         </div>
     </section>
 
-    <!-- Fundadores -->
-    <section id="fundadores" class="founders">
+    <!-- Equipe -->
+    <section id="equipe" class="team">
         <div class="container">
             <div class="section-title">
-                <h2>Nossa Equipe</h2>
-                <p>Conheça as pessoas por trás do Verde Vida</p>
+                <h2>Nosso Time</h2>
+                <p>Profissionais qualificados prontos para atendê-lo</p>
             </div>
-            <div class="founders-content">
-                <div class="founders-story">
-                    <p>Há mais de 15 anos, duas amigas apaixonadas por alimentação saudável e sustentabilidade, Ana e Clara, compartilhavam o sonho de criar um espaço onde as pessoas pudessem encontrar produtos frescos, de qualidade e com origem conhecida.</p>
-                    <p>Unidas pela amizade e pela crença de que comer bem é essencial para uma vida saudável, elas mergulharam no mundo da agricultura familiar e dos pequenos produtores.</p>
-                    <p>Depois de anos estabelecendo parcerias com produtores locais, nasceu o Verde Vida - um espaço onde a qualidade dos alimentos se encontra com o compromisso social e ambiental.</p>
+            <div class="team-content">
+                <div class="team-story">
+                    <p>No Horti+, contamos com uma equipe altamente qualificada e comprometida em oferecer a melhor experiência para nossos clientes. Nossos especialistas em produtos frescos estão sempre disponíveis para ajudar na escolha dos melhores ingredientes para suas refeições.</p>
+                    <p>Cada membro da nossa equipe passa por treinamento especializado para conhecer profundamente cada produto, suas origens, sazonalidade e formas ideais de conservação e preparo.</p>
+                    <p>Nosso compromisso vai além da venda - queremos ser parceiros na sua jornada por uma alimentação mais saudável e saborosa, oferecendo orientação personalizada e um atendimento que faz a diferença.</p>
                 </div>
                 
-                <div class="founders-image">
-                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2078&q=80" alt="Ana e Clara - Fundadoras do Verde Vida">
+                <!-- Espaço para imagem da equipe -->
+                <div class="team-image-placeholder">
+                    <i class="fas fa-user-friends"></i>
+                    <p>Espaço para foto da nossa equipe</p>
                 </div>
                 
-                <div class="founders-profiles">
-                    <div class="founder-profile">
-                        <h3>Ana Silva</h3>
-                        <p>Co-fundadora e Especialista em Produtos Orgânicos</p>
-                        <p>Engenheira agrônoma com mais de 12 anos de experiência em agricultura sustentável. Ana é responsável pela seleção dos produtores e pela qualidade dos produtos orgânicos que oferecemos.</p>
+                <div class="team-highlights">
+                    <div class="team-highlight">
+                        <div class="team-highlight-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Equipe Qualificada</h3>
+                        <p>Nossos colaboradores recebem treinamento contínuo sobre produtos agrícolas, orgânicos e técnicas de conservação para melhor atendê-lo.</p>
                     </div>
-                    <div class="founder-profile">
-                        <h3>Clara Santos</h3>
-                        <p>Co-fundadora e Gerente de Operações</h3>
-                        <p>Formada em nutrição e gestão de negócios, Clara garante que cada experiência no Verde Vida seja especial. Ela cuida das parcerias com produtores, logística e atendimento ao cliente.</p>
+                    <div class="team-highlight">
+                        <div class="team-highlight-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Atendimento Personalizado</h3>
+                        <p>Oferecemos orientação individualizada para ajudar você a escolher os melhores produtos de acordo com suas necessidades e preferências.</p>
+                    </div>
+                    <div class="team-highlight">
+                        <div class="team-highlight-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Prontidão no Atendimento</h3>
+                        <p>Nossa equipe está sempre preparada para oferecer um atendimento ágil e eficiente, tanto nas lojas físicas quanto nas vendas online.</p>
                     </div>
                 </div>
             </div>
@@ -964,7 +999,7 @@
                         </div>
                         <div>
                             <h4>E-mail</h4>
-                            <p>contato@verdevida.com.br</p>
+                            <p>contato@hortimais.com.br</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1037,7 +1072,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <a href="#" class="footer-logo">Verde<span>Vida</span></a>
+                    <a href="#" class="footer-logo">Horti<span>+</span></a>
                     <p>Hortifruti Natural e Orgânico</p>
                     <p>Frescor direto da natureza para sua mesa</p>
                     <p>CNPJ: 12.345.678/0001-90</p>
@@ -1052,7 +1087,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Verde Vida Hortifruti - Todos os direitos reservados</p>
+                <p>&copy; 2023 Horti+ Hortifruti - Todos os direitos reservados</p>
                 <p>Desenvolvido com ❤️ para quem ama comida de verdade</p>
             </div>
         </div>
