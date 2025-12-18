@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verde Vida - Hortifruti Natural</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #27ae60;
+            --secondary: #f1c40f;
+            --accent: #2ecc71;
+            --dark: #1a3c27;
+            --darker: #0f2417;
+            --light: #f5f9f7;
+            --text: #e8f5e9;
+            --gray: #2d4a38;
+            --brown: #8b4513;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.7;
+            color: var(--text);
+            background-color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--light);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e6b800;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: rgba(26, 60, 39, 0.95);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--light);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--light);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(15, 36, 23, 0.85), rgba(15, 36, 23, 0.85)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            padding: 180px 0 100px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--light);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            color: var(--text);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        /* Sobre */
+        .about {
+            background-color: var(--darker);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.03);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            bottom: -10px;
+            left: 0;
+            background-color: var(--primary);
+        }
+        
+        /* Produtos */
+        .products {
+            background-color: var(--dark);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .section-title p {
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-item {
+            background-color: var(--darker);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .product-item-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-item:hover .product-item-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-item-content {
+            padding: 25px;
+        }
+        
+        .product-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .product-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .product-tag.organic {
+            background-color: var(--secondary);
+            color: #333;
+        }
+        
+        /* Fundadores */
+        .founders {
+            background-color: var(--darker);
+        }
+        
+        .founders-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .founders-story {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .founders-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+        
+        .founders-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .founders-profiles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+        
+        .founder-profile {
+            text-align: center;
+            background-color: var(--dark);
+            border-radius: 8px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .founder-profile:hover {
+            transform: translateY(-10px);
+        }
+        
+        .founder-profile h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+        
+        .founder-profile p {
+            color: var(--secondary);
+            font-weight: 500;
+        }
+        
+        /* Contato */
+        .contact {
+            background-color: var(--dark);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            font-size: 20px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .delivery-apps {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .delivery-app {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background-color: var(--darker);
+            color: var(--text);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .delivery-app:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: var(--darker);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--light);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--gray);
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: var(--text);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 15px;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-info p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--dark);
+            border-radius: 50%;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--gray);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content, .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-img, .about-text, .contact-info, .contact-form {
+                width: 100%;
+            }
+            
+            .about-img {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--darker);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 12px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 130px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .products-grid, .founders-profiles {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                text-align: center;
+            }
+            
+            .delivery-apps {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .product-item, .founder-profile {
+                padding: 20px 15px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+        }
+        
+        /* Destaques */
+        .highlights {
+            background-color: var(--darker);
+            padding: 60px 0;
+        }
+        
+        .highlights-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .highlight-item {
+            padding: 20px;
+        }
+        
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .highlight-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Verde<span>Vida</span></a>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#fundadores">Nossa Equipe</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Frescor Direto da Natureza</h1>
+                <p>No Verde Vida, oferecemos os melhores produtos hortifrutis, orgânicos e frescos, diretamente do produtor para sua mesa. Qualidade que você vê e sabor que você sente.</p>
+                <div class="hero-buttons">
+                    <a href="#produtos" class="btn">Nossos Produtos</a>
+                    <a href="#contato" class="btn btn-secondary">Peça Delivery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destaques -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlights-container">
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Produtos Orgânicos</h3>
+                    <p>Selecionamos os melhores produtos livres de agrotóxicos</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Entregamos em até 2 horas na região</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3>Variedade</h3>
+                    <p>Mais de 200 produtos frescos sempre disponíveis</p>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Preço Justo</h3>
+                    <p>Direto do produtor, sem intermediários</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior do Mercadinho Verde Vida">
+                </div>
+                <div class="about-text">
+                    <h2>Nossa História</h2>
+                    <p>O Verde Vida nasceu da paixão por alimentos frescos e saudáveis, com a missão de conectar produtores locais a consumidores que valorizam qualidade e sustentabilidade.</p>
+                    <p>Nossa filosofia é simples: oferecer o melhor da natureza com transparência, respeito ao meio ambiente e compromisso com a saúde de nossos clientes.</p>
+                    <p>Localizado no corário do bairro, nosso mercadinho se tornou um ponto de referência para quem busca qualidade, variedade e atendimento personalizado.</p>
+                    <a href="#contato" class="btn">Venha nos Conhecer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossos Produtos</h2>
+                <p>Selecionamos os melhores produtos para sua mesa</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-item">
+                    <div class="product-item-img">
+                        <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Frutas Variadas">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Frutas da Estação <span class="price">a partir de R$ 8,90/kg</span></h3>
+                        <p>Seleção de frutas frescas e maduras, colhidas no ponto certo. Inclui maçã, banana, laranja, uva, morango e outras frutas da época.</p>
+                        <span class="product-tag organic">Orgânico</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-img">
+                        <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Legumes Frescos">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Legumes Frescos <span class="price">a partir de R$ 6,50/kg</span></h3>
+                        <p>Batata, cenoura, beterraba, abobrinha, berinjela e outros legumes selecionados, direto da horta para sua mesa.</p>
+                        <span class="product-tag">Fresco</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <div class="product-item-img">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2084&q=80" alt="Verduras e Folhas">
+                    </div>
+                    <div class="product-item-content">
+                        <h3>Verduras e Folhas <span class="price">a partir de R$ 4,90/maço</span></h3>
+                        <p>Alface, rúcula, espinafre, couve, agrião e outras folhas fresquinhas, colhidas diariamente para garantir máxima qualidade.</p>
+                        <span class="product-tag organic">Orgânico</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fundadores -->
+    <section id="fundadores" class="founders">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Equipe</h2>
+                <p>Conheça as pessoas por trás do Verde Vida</p>
+            </div>
+            <div class="founders-content">
+                <div class="founders-story">
+                    <p>Há mais de 15 anos, duas amigas apaixonadas por alimentação saudável e sustentabilidade, Ana e Clara, compartilhavam o sonho de criar um espaço onde as pessoas pudessem encontrar produtos frescos, de qualidade e com origem conhecida.</p>
+                    <p>Unidas pela amizade e pela crença de que comer bem é essencial para uma vida saudável, elas mergulharam no mundo da agricultura familiar e dos pequenos produtores.</p>
+                    <p>Depois de anos estabelecendo parcerias com produtores locais, nasceu o Verde Vida - um espaço onde a qualidade dos alimentos se encontra com o compromisso social e ambiental.</p>
+                </div>
+                
+                <div class="founders-image">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2078&q=80" alt="Ana e Clara - Fundadoras do Verde Vida">
+                </div>
+                
+                <div class="founders-profiles">
+                    <div class="founder-profile">
+                        <h3>Ana Silva</h3>
+                        <p>Co-fundadora e Especialista em Produtos Orgânicos</p>
+                        <p>Engenheira agrônoma com mais de 12 anos de experiência em agricultura sustentável. Ana é responsável pela seleção dos produtores e pela qualidade dos produtos orgânicos que oferecemos. Sua paixão pela terra começou na infância, na fazenda dos avós.</p>
+                    </div>
+                    <div class="founder-profile">
+                        <h3>Clara Santos</h3>
+                        <p>Co-fundadora e Gerente de Operações</h3>
+                        <p>Formada em nutrição e gestão de negócios, Clara garante que cada experiência no Verde Vida seja especial. Ela cuida das parcerias com produtores, logística e desenvolvimento de novos produtos, sempre com foco na qualidade e satisfação dos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Entre em Contato</h2>
+                <p>Venha nos visitar ou peça pelo delivery</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informações de Contato</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Rua das Flores, 123 - Centro<br>São Paulo - SP, 01234-567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 3456-7890 / (11) 98765-4321</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@verdevida.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Horário de Funcionamento</h4>
+                            <p>Segunda a Sábado: 7h às 20h<br>Domingo: 7h às 14h</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div>
+                            <h4>Delivery</h4>
+                            <p>Entregamos em toda a região (consulte zonas)</p>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 30px;">Peça por aqui</h3>
+                    <div class="delivery-apps">
+                        <a href="#" class="delivery-app">
+                            <i class="fas fa-shopping-cart"></i>
+                            Peça pelo Site
+                        </a>
+                        <a href="#" class="delivery-app">
+                            <i class="fas fa-mobile-alt"></i>
+                            iFood
+                        </a>
+                        <a href="#" class="delivery-app">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Envie uma Mensagem</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" placeholder="Faça seu pedido, tire dúvidas ou envie sugestões..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#" class="footer-logo">Verde<span>Vida</span></a>
+                    <p>Hortifruti Natural e Orgânico</p>
+                    <p>Frescor direto da natureza para sua mesa</p>
+                    <p>CNPJ: 12.345.678/0001-90</p>
+                </div>
+                <div>
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Verde Vida Hortifruti - Todos os direitos reservados</p>
+                <p>Desenvolvido com ❤️ para quem ama comida de verdade</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+        
+        // Form submission (apenas exemplo)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Obrigado pela sua mensagem! Em breve entraremos em contato.');
+            this.reset();
+        });
+        
+        // Fechar menu ao rolar a página (mobile)
+        window.addEventListener('scroll', function() {
+            if (window.innerWidth <= 768) {
+                document.querySelector('.nav-links').classList.remove('active');
+            }
+            
+            // Header scroll effect
+            if (window.scrollY > 100) {
+                document.querySelector('header').style.padding = '0';
+                document.querySelector('header').style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            } else {
+                document.querySelector('header').style.padding = '';
+                document.querySelector('header').style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+            }
+        });
+    </script>
+</body>
+</html>
